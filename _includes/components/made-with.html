@@ -1,0 +1,27 @@
+<p>
+    This
+    <a href="https://github.com/nnooney/jekyll-theme-nn">theme</a>
+    was made with:
+</p>
+<div class="level is-mobile made-with">
+    <div class="level-item">
+        <a href="https://jekyllrb.com">
+            <img src="{{ "/assets/images/jekyll.png" | relative_url }}"
+                alt="Bulma: a modern CSS framework">
+        </a>
+    </div>
+    <span class="icon"></span>
+    <div class="level-item">
+        <a href="https://bulma.io">
+            <img src="{{ "/assets/images/bulma.png" | relative_url }}"
+                alt="Jekyll: Transform your plain text into static websites">
+        </a>
+    </div>
+    <span class="icon"></span>
+    <div class="level-item">
+        <a href="https://feathericons.com">
+            {% include components/feather-icon.html
+                icon="feather" class="has-text-grey" %}
+        </a>
+    </div>
+</div>

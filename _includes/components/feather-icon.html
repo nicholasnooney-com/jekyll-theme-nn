@@ -1,0 +1,9 @@
+{% capture symbol %}
+/assets/vendor/feather/feather-sprite.svg#{{ include.icon }}
+{% endcapture %}
+
+<span class="icon {{ include.class }}">
+    <svg class="feather feather-{{ include.icon }}">
+        <use xlink:href="{{ symbol | strip | relative_url }}" />
+    </svg>
+</span>

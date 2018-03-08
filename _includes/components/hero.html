@@ -1,0 +1,29 @@
+<section class="hero is-info is-bold">
+    <div class="hero-body">
+        <div class="container">
+            {% if site.logo %}
+            <div class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <figure class="image is-96x96">
+                            <img src="{{ site.logo | escape }}"
+                                alt="{{ site.logo_alt | escape }}"
+                                width="100%">
+                        </figure>
+                    </div>
+                    <div class="wrapper">
+            {% endif %}
+                    <h1 class="title">
+                        {{ site.title | escape }}
+                    </h1>
+                    <h2 class="subtitle">
+                        {{ site.description | escape }}
+                    </h2>
+            {% if site.logo %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

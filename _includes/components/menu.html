@@ -1,0 +1,10 @@
+<aside class="menu is-hidden-mobile">
+    <p class="menu-label">
+        Categories
+    </p>
+    <ul class="menu-list">
+        {% for category in site.categories %}
+        <li><a href="#">{{ category | first }}</a></li>
+        {% endfor %}
+    </ul>
+</aside>

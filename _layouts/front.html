@@ -1,7 +1,11 @@
 ---
 layout: default
+hero: true
+menu: true
 ---
 
-<div class="front">
-  {{ content }}
-</div>
+<section class="front">
+    {{ content }}
+</section>
+
+{% include components/recent-posts.html %}

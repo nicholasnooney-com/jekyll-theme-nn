@@ -1,0 +1,145 @@
+{% comment %}
+The liquid at the top will search through all posts in the series
+{% endcomment %}
+{% assign count = '0' %}
+{% assign index = '0' %}
+{% assign capture_prev = true %}
+{% assign capture_next = false %}
+
+{% for post in site.posts reversed %}
+    {% if post.series == page.series %}
+        {% capture count %}{{ count | plus: '1' }}{% endcapture %}
+        {% assign last_url = post.url %}
+
+        {% if capture_next %}
+            {% assign next_title = post.title %}
+            {% assign next_url = post.url %}
+        {% endif %}
+
+        {% if post.url == page.url %}
+            {% capture index %}{{ count }}{% endcapture %}
+            {% assign capture_prev = false %}
+            {% assign capture_next = true %}
+        {% endif %}
+
+        {% if capture_prev %}
+            {% assign prev_title = post.title %}
+            {% assign prev_url = post.url %}
+        {% endif %}
+
+        {% if count == '1' %}
+            {% assign first_url = post.url %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+{% assign after = count | minus: index %}
+{% comment %}
+At this point, count is the total number of posts, index is this post, and after
+is the number of posts after index.
+We've also captured the first, previous, next, and last posts in the series.
+{% endcomment %}
+
+{% if count > '1' %}
+<hr>
+<section class="series-footer">
+    <div class="level">
+        <div class="level-item">
+            {% include components/feather-icon.html
+                icon="archive" class="has-text-info" %}
+            <!-- Use this span for spacing -->
+            <span class="icon"></span>
+            <p class="has-text-info has-text-weight-semibold is-size-5">
+                {{ page.series }}
+            </p>
+        </div>
+    </div>
+    <nav class="pagination is-centered" role="navigation"
+        aria-label="pagination">
+        {% if index > '1' %}
+            <a href="{{ prev_url }}" class="pagination-previous">Previous</a>
+        {% else %}
+            <a href="{{ prev_url }}" class="pagination-previous" disabled>
+                Previous
+            </a>
+        {% endif %}
+
+        {% if after > 0 %}
+            <a href="{{ next_url }}" class="pagination-next">Next</a>
+        {% else %}
+            <a href="{{ next_url }}" class="pagination-next" disabled>
+                Next
+            </a>
+        {% endif %}
+
+        <ul class="pagination-list">
+            {% if index > '2' %}
+            <li>
+                <a href="{{ first_url }}" class="pagination-link"
+                    aria-label="Goto page 1">
+                    1
+                </a>
+            </li>
+            {% endif %}
+
+            {% if index > '3' %}
+            <li>
+                <span class="pagination-ellipsis">&hellip;</span>
+            </li>
+            {% endif %}
+
+            {% if index > '1' %}
+            <li>
+                <a href="{{ prev_url }}" class="pagination-link"
+                    aria-label="Goto page {{ index | minus: '1' }}">
+                    {{ index | minus: '1' }}
+                </a>
+            </li>
+            {% endif %}
+
+            <li>
+                <a class="pagination-link is-current"
+                    aria-label="Current page {{ index }}">
+                    {{ index }}
+                </a>
+            </li>
+
+            {% if after > 0 %}
+            <li>
+                <a href="{{ next_url }}" class="pagination-link"
+                    aria-label="Goto page {{ index | plus: '1' }}">
+                    {{ index | plus: '1' }}
+                </a>
+            </li>
+            {% endif %}
+
+            {% if after > 2 %}
+            <li>
+                <span class="pagination-ellipsis">&hellip;</span>
+            </li>
+            {% endif %}
+
+            {% if after > 1 %}
+            <li>
+                <a href="{{ last_url }}" class="pagination-link"
+                    aria-label="Goto page {{ count }}">
+                    {{ count }}
+                </a>
+            </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+    <div class="level">
+        <div class="level-left">
+            {% if index > '1' %}
+            <p>{{ prev_title }}</p>
+            {% endif %}
+        </div>
+        <div class="level-right">
+            {% if after > 0 %}
+            <p>{{ next_title }}</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endif %}

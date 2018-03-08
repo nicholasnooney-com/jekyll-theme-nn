@@ -2,4 +2,28 @@
 layout: default
 ---
 
-{{ content }}
+<article class="page">
+    <div class="level">
+        <div class="level-left">
+            <header class="page-header">
+                <p class="title is-3 has-text-primary">
+                    {{ page.long-title | default: page.title | escape }}
+                </p>
+                <p class="subtitle is-5">
+                    {{ page.date | date: "%B %-d, %Y" }}
+                </p>
+            </header>
+        </div>
+        <div class="level-right">
+            <div class="tags">
+                {% for tag in page.tags %}
+                <span class="tag is-light">{{ tag }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="content">
+        {{ content }}
+    </div>
+</article>

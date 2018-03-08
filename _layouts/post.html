@@ -2,4 +2,42 @@
 layout: default
 ---
 
-{{ content }}
+<article class="post">
+    <section class="post-header">
+        <div class="post-header level">
+            <div class="level-left">
+                <header class="post-title">
+                    <p class="title is-3 has-text-primary">
+                        {{ page.title | escape }}
+                    </p>
+                    <p class="subtitle is-5">
+                        {{ page.date | date: "%B %-d, %Y" }}
+                    </p>
+                </header>
+            </div>
+            <div class="level-right">
+                <div class="tags">
+                    {% for tag in page.tags %}
+                    <span class="tag is-light">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    {% if page.series %}
+        {% include components/series-header.html %}
+    {% endif %}
+
+    <section class="post-content">
+        <div class="content">
+            {{ content }}
+        </div>
+    </section>
+
+    {% if page.series %}
+        {% include components/series-footer.html %}
+    {% endif %}
+</article>
