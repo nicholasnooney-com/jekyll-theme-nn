@@ -1,33 +1,35 @@
 <header>
     <nav class="navbar is-fixed-top is-light" role="navigation"
          aria-label="main navigation">
-        <div class="navbar-brand">
-            {% if site.logo %}
-            <a href="{{ "/" | relative_url }}" class="navbar-item">
-                <img src="{{ site.logo | escape }}"
-                     alt="{{ site.logo_alt | escape }}"
-                     width="100%">
-            </a>
-            {% endif %}
-            <div class="navbar-burger">
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="container">
+            <div class="navbar-brand">
+                {% if site.logo %}
+                <a href="{{ "/" | relative_url }}" class="navbar-item">
+                    <img src="{{ site.logo | escape }}"
+                         alt="{{ site.logo_alt | escape }}"
+                         width="100%">
+                </a>
+                {% endif %}
+                <div class="navbar-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </div>
-        <div class="navbar-menu">
-            <div class="navbar-start">
+            <div class="navbar-menu">
+                <div class="navbar-start">
 
-            </div>
-            <div class="navbar-end">
-                {% for page in site.pages %}
-                    {% if page.title %}
-                        <a href="{{ page.url | relative_url }}"
-                            class="navbar-item">
-                            {{ page.title | escape }}
-                        </a>
-                    {% endif %}
-                {% endfor %}
+                </div>
+                <div class="navbar-end">
+                    {% for page in site.pages %}
+                        {% if page.title %}
+                            <a href="{{ page.url | relative_url }}"
+                                class="navbar-item">
+                                {{ page.title | escape }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </nav>
