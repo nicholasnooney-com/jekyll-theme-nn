@@ -52,3 +52,6 @@ their own terms. These libraries are listed below:
 - This project uses [Feather](https://feathericons.com/) Icons. Feather is
   included in this project at `assets/vendor/feather`. See Feather's
   [LICENSE](assets/vendor/feather/LICENSE).
+- This project uses [Nord](https://arcticicestudio.github.io/nord/) colors.
+  These colors are included at `_sass/vendor/nord`. See Nord's
+  [LICENSE.md](_sass/vendor/nord/LICENSE.md).

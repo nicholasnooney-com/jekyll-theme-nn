@@ -1,0 +1,29 @@
+.post-excerpt {
+    text-align: justify;
+}
+
+.feather {
+  width: 1.5em;
+  height: 1.5em;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.hero img {
+    height: 6rem;
+}
+
+.made-with * {
+    max-height: 1.5rem;
+    filter: grayscale(100%);
+}
+
+.content {
+    div[class^="highlighter-"],
+    div[class*=" highlighter-"] {
+        margin-bottom: 1em;
+    }
+}
