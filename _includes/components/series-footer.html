@@ -132,12 +132,18 @@ We've also captured the first, previous, next, and last posts in the series.
     <div class="level">
         <div class="level-left">
             {% if index > '1' %}
-            <p>{{ prev_title }}</p>
+            <p>
+                <span class="is-hidden-tablet is-italic">Previous: </span>
+                {{ prev_title }}
+            </p>
             {% endif %}
         </div>
         <div class="level-right">
             {% if after > 0 %}
-            <p>{{ next_title }}</p>
+            <p>
+                <span class="is-hidden-tablet is-italic">Next: </span>
+                {{ next_title }}
+            </p>
             {% endif %}
         </div>
     </div>
