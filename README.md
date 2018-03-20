@@ -1,4 +1,4 @@
-[![Gem](https://img.shields.io/gem/v/formatador.svg)](https://rubygems.org/gems/jekyll-theme-nn)
+[![Gem](https://img.shields.io/gem/v/jekyll-theme-nn.svg)](https://rubygems.org/gems/jekyll-theme-nn)
 
 # jekyll-theme-nn
 
