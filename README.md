@@ -4,6 +4,7 @@ This repository contains a Jekyll Theme setup as a Gem. This theme
 is used for my own personal site. You are welcome to use it as
 well, if you'd like.
 
+![The Front Page of the Theme](docs/front.png?raw=true "Front Page")
 
 ## Installation
 
