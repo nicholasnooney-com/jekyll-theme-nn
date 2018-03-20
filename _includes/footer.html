@@ -28,6 +28,13 @@
                             icon="twitter" class="has-text-dark" %}
                     </a>
                     {% endif %}
+                    {% if site.linkedin_username %}
+                    <span class="icon"></span>
+                    <a href="https://linkedin.com/in/{{ site.linkedin_username }}">
+                        {% include components/feather-icon.html
+                            icon="linkedin" class="has-text-dark" %}
+                    </a>
+                    {% endif %}
                 </p>
                 <p>&copy; Copyright {{ site.time | date: "%Y" }} {{ site.author }}</p>
             </div>
