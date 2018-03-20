@@ -1,3 +1,5 @@
+[![Gem](https://img.shields.io/gem/v/formatador.svg)](https://rubygems.org/gems/jekyll-theme-nn)
+
 # jekyll-theme-nn
 
 This repository contains a Jekyll Theme setup as a Gem. This theme
