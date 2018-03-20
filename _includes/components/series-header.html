@@ -1,12 +1,17 @@
+{% assign series_page = page.series | slugify | append: ".html" %}
+
 <section class="series-header level">
     <div class="level-left">
     </div>
     <div class="level-right">
         <p class="series-header is-italic">
             Part of the series
-            <span class="has-text-info has-text-weight-semibold">
-                {{ page.series }}
-            </span>
+            <a href="{{ series_page | prepend: "/series/" | relative_url }}"
+                class="link-wrapper-inline">
+                <span class="has-text-info has-text-weight-semibold">
+                    {{ page.series }}
+                </span>
+            </a>
         </p>
     </div>
 </section>

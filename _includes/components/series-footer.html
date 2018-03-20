@@ -14,6 +14,7 @@ The liquid at the top will search through all posts in the series
         {% if capture_next %}
             {% assign next_title = post.title %}
             {% assign next_url = post.url %}
+            {% assign capture_next = false %}
         {% endif %}
 
         {% if post.url == page.url %}
@@ -35,22 +36,26 @@ The liquid at the top will search through all posts in the series
 {% assign after = count | minus: index %}
 {% comment %}
 At this point, count is the total number of posts, index is this post, and after
-is the number of posts after index.
-We've also captured the first, previous, next, and last posts in the series.
+is the number of posts after index. We've also captured the first, previous,
+next, and last posts in the series.
 {% endcomment %}
 
 {% if count > '1' %}
+{% assign series_page = page.series | slugify | append: ".html" %}
 <hr>
 <section class="series-footer">
     <div class="level">
         <div class="level-item">
-            {% include components/feather-icon.html
-                icon="archive" class="has-text-info" %}
-            <!-- Use this span for spacing -->
-            <span class="icon"></span>
-            <p class="has-text-info has-text-weight-semibold is-size-5">
-                {{ page.series }}
-            </p>
+            <a href="{{ series_page | prepend: "/series/" | relative_url }}"
+                class="link-wrapper">
+                {% include components/feather-icon.html
+                    icon="archive" class="has-text-info" %}
+                <!-- Use this span for spacing -->
+                <span class="icon"></span>
+                <p class="has-text-info has-text-weight-semibold is-size-5">
+                    {{ page.series }}
+                </p>
+            </a>
         </div>
     </div>
     <nav class="pagination is-centered" role="navigation"

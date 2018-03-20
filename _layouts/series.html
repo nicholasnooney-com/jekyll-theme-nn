@@ -1,5 +1,13 @@
-<section class="recent-posts">
-    {% for post in site.posts %}
+---
+layout: default
+---
+
+<p class="title is-2 has-text-info">
+    {{ page.title }}
+</p>
+
+<section class="posts-series">
+    {% for post in page.posts %}
         {% include components/post-snippet.html %}
 
         {% if forloop.last == false %}
