@@ -14,6 +14,13 @@
                             icon="github" class="has-text-dark" %}
                     </a>
                     {% endif %}
+                    {% if site.gitlab_username %}
+                    <span class="icon"></span>
+                    <a href="https://gitlab.com/{{ site.gitlab_username }}">
+                        {% include components/feather-icon.html
+                            icon="gitlab" class="has-text-dark" %}
+                    </a>
+                    {% endif %}
                     {% if site.twitter_username %}
                     <span class="icon"></span>
                     <a href="https://twitter.com/{{ site.twitter_username }}">
