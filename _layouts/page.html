@@ -7,7 +7,7 @@ layout: default
         <div class="level-left">
             <header class="page-header">
                 <p class="title is-3 has-text-primary">
-                    {{ page.long-title | default: page.title | escape }}
+                    {{ page.title | default: page.menu-title | escape }}
                 </p>
                 <p class="subtitle is-5">
                     {{ page.date | date: "%B %-d, %Y" }}
