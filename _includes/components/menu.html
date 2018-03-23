@@ -4,7 +4,13 @@
     </p>
     <ul class="menu-list">
         {% for category in site.categories %}
-        <li><a href="#">{{ category | first }}</a></li>
+        {% assign cat_name = category | first %}
+        {% assign cat_url = "/category/" | append: cat_name | append: ".html" %}
+        <li>
+            <a href="{{ cat_url | relative_url }}">
+                {{ cat_name }}
+            </a>
+        </li>
         {% endfor %}
     </ul>
 </aside>

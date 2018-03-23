@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<p class="title is-2 has-text-info">
+    {{ page.title }}
+</p>
+<p class="subtitle is-6">
+    {{ page.posts | size }} posts in this {{ page.key }}
+</p>
+
+{% assign group_data = site.data[page.key] | where: "name", page.slug | first %}
+{% if group_data %}
+<p class="content">
+    {{ group_data.content }}
+</p>
+{% endif %}
+
+<section class="posts-group">
+    {% for post in page.posts %}
+        {% include components/post-snippet.html %}
+
+        {% if forloop.last == false %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+</section>
