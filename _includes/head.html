@@ -14,7 +14,7 @@
   <!-- Content Links (CSS, canonical, etc.) -->
   <link rel="stylesheet" href="{{ "/assets/vendor/bulma/bulma.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/nn.css" | relative_url }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}" data-proofer-ignore>
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
   {% if site.favicon %}
