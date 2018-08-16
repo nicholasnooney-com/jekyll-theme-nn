@@ -5,8 +5,7 @@
             <div class="level">
                 <div class="level-left">
                     <div class="level-item">
-                        <img src="{{ site.logo | escape }}"
-                            alt="{{ site.logo_alt | escape }}">
+                        {% asset "{{ site.logo }}" alt="{{ site.logo_alt }}" %}
                     </div>
                     <div class="container">
             {% endif %}

@@ -5,8 +5,7 @@
             <div class="navbar-brand">
                 {% if site.logo %}
                 <a href="{{ "/" | relative_url }}" class="navbar-item">
-                    <img src="{{ site.logo | escape }}"
-                         alt="{{ site.logo_alt | escape }}">
+                    {% asset "{{ site.logo }}" alt="{{ site.logo_alt }}" %}
                 </a>
                 {% endif %}
                 <div class="navbar-burger" data-target="navMenu">

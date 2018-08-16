@@ -32,3 +32,14 @@
     display: inherit;
     align-items: inherit;
 }
+
+figure.is-pulled-left {
+    margin-left: 0;
+}
+
+.has-pulled-children::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+}

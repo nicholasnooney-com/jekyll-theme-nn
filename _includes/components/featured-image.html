@@ -1,0 +1,10 @@
+<div class="featured-image-container">
+  <figure class="is-pulled-left">
+    <div class="box">
+      {% asset
+        "{{ page.featured-image }}"
+        magick:resize=400x400>
+        alt="{{ page.featured-alt }}" %}
+    </div>
+  </figure>
+</div>

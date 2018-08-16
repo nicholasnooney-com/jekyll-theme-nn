@@ -19,7 +19,8 @@
 
   {% if site.favicon %}
   <!-- Favicon -->
-  <link rel="icon" href="{{ site.favicon | escape }}">
+  {% assign favicon_href = site.assets.destination | append: "/" | append: site.favicon | relative_url %}
+  <link rel="icon" href="{{ favicon_href }}">
   {% endif %}
 
   {% if site.license_file %}
