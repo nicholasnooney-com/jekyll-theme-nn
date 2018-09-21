@@ -28,9 +28,9 @@
 {% endif %}
 
 {% if page.image %}
-<meta content="{% asset '{{ page.featured-image }}' %}" property="og:image">
+<meta content="{{ assets[page.featured-image].filename }}" property="og:image">
 {% else %}
-<meta content="{% asset '{{ site.logo }}' %}" property="og:image">
+<meta content="{{ assets[site.logo].filename }}" property="og:image">
 {% endif %}
 
 {% if page.categories %}
