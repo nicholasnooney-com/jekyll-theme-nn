@@ -29,10 +29,10 @@
 <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
 {% endif %}
 
-{% if page.image %}
-<meta content="{{ assets[page.featured-image].filename | absolute_url }}" property="og:image">
+{% if page.featured-image %}
+<meta content="{{ site.url }}{% asset '{{ page.featured-image }}' @path %}" property="og:image">
 {% else %}
-<meta content="{{ assets[site.logo].filename | absolute_url }}" property="og:image">
+<meta content="{{ site.url }}{% asset '{{ site.logo }}' @path %}" property="og:image">
 {% endif %}
 
 {% if page.categories %}
