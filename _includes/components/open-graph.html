@@ -21,6 +21,8 @@
 
 {% if page.url %}
 <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+{% else %}
+<meta content="{{ site.url }}" property="og:url">
 {% endif %}
 
 {% if page.date %}
@@ -28,9 +30,9 @@
 {% endif %}
 
 {% if page.image %}
-<meta content="{{ assets[page.featured-image].filename }}" property="og:image">
+<meta content="{{ assets[page.featured-image].filename | absolute_url }}" property="og:image">
 {% else %}
-<meta content="{{ assets[site.logo].filename }}" property="og:image">
+<meta content="{{ assets[site.logo].filename | absolute_url }}" property="og:image">
 {% endif %}
 
 {% if page.categories %}
