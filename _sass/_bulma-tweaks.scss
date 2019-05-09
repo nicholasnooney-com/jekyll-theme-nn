@@ -33,8 +33,9 @@
     align-items: inherit;
 }
 
-figure.is-pulled-left {
-    margin-left: 0;
+.featured-image-container {
+    display: flex;
+    justify-content: center;
 }
 
 .has-pulled-children::after {

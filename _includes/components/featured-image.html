@@ -1,10 +1,17 @@
+{% comment %}
+This template expects the following variables to be defined when including it:
+  - post: A reference to the Jekyll post variable.
+{% endcomment %}
+
 <div class="featured-image-container">
-  <figure class="is-pulled-left">
+  <figure>
     <div class="box">
+      {% if include.post.featured-image.src %}
       {% asset
-        "{{ page.featured-image }}"
-        magick:resize=400x400>
-        alt="{{ page.featured-alt }}" %}
+          "{{ include.post.featured-image.src }}"
+          magick:resize=400x400>
+          alt="{{ include.post.featured-image.alt }}" %}
+      {% endif %}
     </div>
   </figure>
 </div>

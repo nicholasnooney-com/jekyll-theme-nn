@@ -1,6 +1,6 @@
 <section class="recent-posts">
     {% for post in site.posts %}
-        {% include components/post-snippet.html %}
+        {% include components/post-snippet.html post=post %}
 
         {% if forloop.last == false %}
             <hr>
