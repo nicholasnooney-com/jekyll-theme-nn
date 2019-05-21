@@ -32,6 +32,11 @@ layout: default
     {% endif %}
 
     <section class="post-content">
+        {% if page.featured-image %}
+            <div class="content">
+                {% include components/featured-image.html post=page %}
+            </div>
+        {% endif %}
         <div class="content has-pulled-children">
             {{ content }}
         </div>

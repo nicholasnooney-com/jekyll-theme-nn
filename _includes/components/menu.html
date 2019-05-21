@@ -1,16 +1,23 @@
+{% comment %}
+This template works closely with the groups used by the plugin jekyll-groupby.
+{% endcomment %}
+
 <aside class="menu is-hidden-touch">
-    <p class="menu-label">
-        Categories
-    </p>
-    <ul class="menu-list">
-        {% for category in site.categories %}
-        {% assign cat_name = category | first %}
-        {% assign cat_url = "/category/" | append: cat_name | append: ".html" %}
-        <li>
-            <a href="{{ cat_url | relative_url }}">
-                {{ cat_name }}
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
+    {% for group in site.jekyll-groupby.groups %}
+        <p class="menu-label">
+            {{ group.name }}
+        </p>
+        <ul class="menu-list">
+            {% for post in group.posts %}
+                {% assign post_slug = post.name | slugify %}
+                {% assign url = "/" | append: group.name | append: "/" |
+                    append: post_slug | append: ".html" %}
+                <li>
+                    <a href="{{ url | relative_url }}">
+                        {{ post.name }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
 </aside>
