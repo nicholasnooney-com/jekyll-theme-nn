@@ -1,0 +1,44 @@
+<p>
+
+</p>
+<div class="level is-mobile made-with">
+    <div class="level-item">
+        <a href="{{ "/feed.xml" | relative_url }}">
+            {% include components/feather-icon.html
+                icon="rss" class="has-text-dark" %}
+        </a>
+    </div>
+    {% if site.github_username %}
+    <div class="level-item">
+        <a href="https://github.com/{{ site.github_username }}">
+            {% include components/feather-icon.html
+                icon="github" class="has-text-dark" %}
+        </a>
+    </div>
+    {% endif %}
+    {% if site.gitlab_username %}
+    <div class="level-item">
+        <a href="https://gitlab.com/{{ site.gitlab_username }}">
+            {% include components/feather-icon.html
+                icon="gitlab" class="has-text-dark" %}
+        </a>
+    </div>
+    {% endif %}
+    {% if site.twitter_username %}
+    <div class="level-item">
+        <a href="https://twitter.com/{{ site.twitter_username }}">
+            {% include components/feather-icon.html
+                icon="twitter" class="has-text-dark" %}
+        </a>
+    </div>
+    {% endif %}
+    {% if site.linkedin_username %}
+    <div class="level-item">
+        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+            {% include components/feather-icon.html
+                icon="linkedin" class="has-text-dark" %}
+        </a>
+    </div>
+    {% endif %}
+</div>
+<p>&copy; Copyright {{ site.time | date: "%Y" }} {{ site.author }}</p>

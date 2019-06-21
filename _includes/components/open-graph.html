@@ -32,7 +32,7 @@
 {% if page.featured-image and page.featured-image.src %}
 <meta content="{{ site.url }}{% asset '{{ page.featured-image.src }}' @path %}"
   property="og:image">
-{% else %}
+{% elsif site.logo %}
 <meta content="{{ site.url }}{% asset '{{ site.logo }}' @path %}"
   property="og:image">
 {% endif %}

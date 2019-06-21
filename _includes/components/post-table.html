@@ -1,0 +1,36 @@
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in site.posts %}
+            <tr>
+                <td>{{ post.date | date: "%Y-%m-%d" }}</td>
+                <td>
+                    <a href="{{ post.url | relative_url }}">
+                        {{ post.title }}
+                    </a>
+                </td>
+                <td>
+                    {% for category in post.categories %}
+                    <span class="tag is-info">
+                        {{ category | escape }}
+                    </span>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for tag in post.tags %}
+                    <span class="tag is-light">
+                        {{ tag | escape }}
+                    </span>
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

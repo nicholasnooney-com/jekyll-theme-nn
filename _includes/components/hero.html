@@ -7,14 +7,16 @@
                     <div class="level-item">
                         {% asset "{{ site.logo }}" alt="{{ site.logo_alt }}" %}
                     </div>
-                    <div class="container">
+                    <div class="level-item">
             {% endif %}
-                    <h1 class="title">
-                        {{ site.title | escape }}
-                    </h1>
-                    <h2 class="subtitle">
-                        {{ site.description | escape }}
-                    </h2>
+                    <div class="container">
+                        <h1 class="title is-spaced">
+                            {{ site.title | escape }}
+                        </h1>
+                        <h2 class="subtitle">
+                            {{ site.description | escape }}
+                        </h2>
+                    </div>
             {% if site.logo %}
                     </div>
                 </div>

@@ -1,43 +1,10 @@
 <footer class="footer">
     <div class="container">
         <div class="columns">
-            <div class="column content">
-                <p>
-                    <a href="{{ "/feed.xml" | relative_url }}">
-                        {% include components/feather-icon.html
-                            icon="rss" class="has-text-dark" %}
-                    </a>
-                    {% if site.github_username %}
-                    <span class="icon"></span>
-                    <a href="https://github.com/{{ site.github_username }}">
-                        {% include components/feather-icon.html
-                            icon="github" class="has-text-dark" %}
-                    </a>
-                    {% endif %}
-                    {% if site.gitlab_username %}
-                    <span class="icon"></span>
-                    <a href="https://gitlab.com/{{ site.gitlab_username }}">
-                        {% include components/feather-icon.html
-                            icon="gitlab" class="has-text-dark" %}
-                    </a>
-                    {% endif %}
-                    {% if site.twitter_username %}
-                    <span class="icon"></span>
-                    <a href="https://twitter.com/{{ site.twitter_username }}">
-                        {% include components/feather-icon.html
-                            icon="twitter" class="has-text-dark" %}
-                    </a>
-                    {% endif %}
-                    {% if site.linkedin_username %}
-                    <span class="icon"></span>
-                    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
-                        {% include components/feather-icon.html
-                            icon="linkedin" class="has-text-dark" %}
-                    </a>
-                    {% endif %}
-                </p>
-                <p>&copy; Copyright {{ site.time | date: "%Y" }} {{ site.author }}</p>
+            <div class="column is-narrow content">
+                {% include components/social.html %}
             </div>
+            <div class="column is-hidden-mobile"></div>
             <div class="column is-narrow content">
                 {% include components/made-with.html %}
             </div>

@@ -1,9 +1,29 @@
+{% assign show_more = false %}
+{% if include.limit > 0 %}
+    {% assign limit = include.limit %}
+{% else %}
+    {% assign limit = 0 %}
+{% endif %}
+
 <section class="recent-posts">
     {% for post in site.posts %}
         {% include components/post-snippet.html post=post %}
 
-        {% if forloop.last == false %}
+        {% if forloop.index == limit %}
+            {% if site.index_url %}
+                {% assign show_more = true %}
+            {% endif %}
+            {% break %}
+        {% else %}
             <hr>
         {% endif %}
     {% endfor %}
+
+    {% if show_more %}
+        <hr>
+        <a class="button is-primary is-pulled-right"
+            href="{{ site.index_url | relative_url }}">
+            See More Posts
+        </a>
+    {% endif %}
 </section>
