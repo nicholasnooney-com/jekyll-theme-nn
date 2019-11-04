@@ -44,20 +44,22 @@ next, and last posts in the series.
 {% assign series_page = page.series | slugify | append: ".html" %}
 <hr>
 <section class="series-footer">
-    <div class="level">
-        <div class="level-item">
-            <a href="{{ series_page | prepend: "/series/" | relative_url }}"
-                class="link-wrapper">
-                {% include components/feather-icon.html
-                    icon="archive" class="has-text-info" %}
-                <!-- Use this span for spacing -->
-                <span class="icon"></span>
-                <p class="has-text-info has-text-weight-semibold is-size-5">
-                    {{ page.series }}
-                </p>
-            </a>
+    <a href="{{ series_page | prepend: "/series/" | relative_url }}"
+        class="link-wrapper content">
+        <div class="level is-mobile">
+            <div class="level-center">
+                <div class="level-item is-narrow">
+                    {% include components/feather-icon.html
+                        icon="archive" class="has-text-info" %}
+                </div>
+                <div class="level-item is-narrow">
+                    <p class="has-text-info has-text-weight-semibold is-size-5">
+                        {{ page.series }}
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
+    </a>
     <nav class="pagination is-centered" role="navigation"
         aria-label="pagination">
         {% if index > '1' %}

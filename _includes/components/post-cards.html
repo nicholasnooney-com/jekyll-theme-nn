@@ -1,0 +1,26 @@
+{% for post in site.posts %}
+<div class="card">
+    <div class="card-content">
+        <a href="{{ post.url | relative_url }}">
+            <p class="title is-4 has-text-info">
+                {{ post.title }}
+            </p>
+        </a>
+        <p class="subtitle is-6">
+            {{ post.date | date: "%Y-%m-%d" }}
+        </p>
+        <p class="content">
+            {% for category in post.categories %}
+            <span class="tag is-info">
+                {{ category | escape }}
+            </span>
+            {% endfor %}
+            {% for tag in post.tags %}
+            <span class="tag is-light">
+                {{ tag | escape }}
+            </span>
+            {% endfor %}
+        </p>
+    </div>
+</div>
+{% endfor %}

@@ -33,14 +33,16 @@ This template expects the following variables to be defined when including it:
                             <div class="level-item">
                                 <div class="tags">
                                     {% for category in post.categories %}
-                                    <span class="tag is-info">
+                                    {% assign cat_page = category | slugify | append: ".html" %}
+                                    <a href="{{ cat_page | prepend: "/category/" | relative_url }}" class="tag is-info">
                                         {{ category | escape }}
-                                    </span>
+                                    </a>
                                     {% endfor %}
                                     {% for tag in post.tags %}
-                                    <span class="tag is-light">
+                                    {% assign tag_page = tag | slugify | append: ".html" %}
+                                    <a href="{{ tag_page | prepend: "/tags/" | relative_url }}" class="tag is-light">
                                         {{ tag | escape }}
-                                    </span>
+                                    </a>
                                     {% if forloop.index > 3 %}
                                         {% break %}
                                     {% endif %}
