@@ -38,55 +38,41 @@ Or install it yourself as:
 
 This theme supports the following layouts, both in Desktop and Mobile:
 
-### Front Page
+- Front
+  - Displays a Hero section, a side menu (Desktop Only), and a list of recent
+    posts.
+- Page
+  - Displays a static page's contents. A page can be added to the top navbar.
+- Post
+  - Displays a post's contents.
+- Group
+  - Displays a group of related posts.
 
-The front page contains a sidebar listing categories, tags, and series, as well
-as a list of the most recent posts. The desktop version is shown above; here is
-the mobile version of the front page.
+Additionally, this theme supports several components for organizing posts
 
-![The Front Page](docs/front-mobile-sm.png?raw=true "Front Page Mobile")
+- Series
+  - Using the YAML front matter `series`, posts can be grouped into any series.
+  - in the file `_data/series.yml`, descriptions for each series can be
+    provided.
+- All Posts
+  - All posts can be displayed in a table (Desktop) or list of cards (Mobile)
+    for easy site navigation.
 
-### Post
-
-The post page renders the layout for a post:
+### Desktop
 
 ![A Post Page](docs/post-desktop-sm.png?raw=true "Post Desktop")
-
-![A Post Page](docs/post-mobile-sm.png?raw=true "Post Mobile")
-
-### All Posts
-
-All posts can be shown in a nice table or list:
-
 ![All Posts Page](docs/all-posts-desktop-sm.png?raw=true "All Posts Desktop")
-
-![All Posts Page](docs/all-posts-mobile-sm.png?raw=true "All Posts Mobile")
-
-### Page
-
-Static content can be rendered in its own page. Pages can optionally be placed
-on the top navbar of the site.
-
 ![A Static Page](docs/page-desktop-sm.png?raw=true "Page Desktop")
-
-![A Static Page](docs/page-mobile-sm.png?raw=true "Page Mobile")
-
-### Group Pages
-
-Posts are grouped by category, tag, or series. All of the related posts are
-grouped into their own page.
-
 ![A Post Group Page](docs/group-desktop-sm.png?raw=true "Post Group Desktop")
-
-![A Post Group Page](docs/group-mobile-sm.png?raw=true "Post Group Mobile")
-
-### A Post in a Series
-
-At the bottom of every post belonging to a series, helpful navigation links
-appear between the posts in the series.
-
 ![A Post in a Series](docs/series-desktop-sm.png?raw=true "Series Desktop")
 
+### Mobile
+
+![The Front Page](docs/front-mobile-sm.png?raw=true "Front Page Mobile")
+![A Post Page](docs/post-mobile-sm.png?raw=true "Post Mobile")
+![All Posts Page](docs/all-posts-mobile-sm.png?raw=true "All Posts Mobile")
+![A Static Page](docs/page-mobile-sm.png?raw=true "Page Mobile")
+![A Post Group Page](docs/group-mobile-sm.png?raw=true "Post Group Mobile")
 ![A Post in a Series](docs/series-mobile-sm.png?raw=true "Series Mobile")
 
 ## Contributing
