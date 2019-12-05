@@ -17,18 +17,16 @@
                     </a>
                 </td>
                 <td>
-                    {% for category in post.categories %}
-                    <span class="tag is-info">
-                        {{ category | escape }}
-                    </span>
-                    {% endfor %}
+                    {% include components/gen-badge.html
+                        list=post.categories
+                        prepend_url="/category/"
+                        class="is-info" %}
                 </td>
                 <td>
-                    {% for tag in post.tags %}
-                    <span class="tag is-light">
-                        {{ tag | escape }}
-                    </span>
-                    {% endfor %}
+                    {% include components/gen-badge.html
+                        list=post.tags
+                        prepend_url="/tags/"
+                        class="is-light" %}
                 </td>
             </tr>
         {% endfor %}

@@ -17,9 +17,10 @@ layout: default
             </div>
             <div class="level-right">
                 <div class="tags">
-                    {% for tag in page.tags %}
-                    <span class="tag is-light">{{ tag }}</span>
-                    {% endfor %}
+                    {% include components/gen-badge.html
+                        list=page.tags
+                        prepend_url="/tags/"
+                        class="is-light" %}
                 </div>
             </div>
         </div>

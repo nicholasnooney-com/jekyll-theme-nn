@@ -1,0 +1,23 @@
+{% comment %}
+This template expects the following variables to be defined when including it:
+  - list: A list of items to create badges for.
+  - prepend_url: The url to prepend to each link.
+  - class: CSS classes to apply to the badge.
+  - limit: The maximum number of badges to create.
+{% endcomment %}
+
+{% assign list = include.list | default: nil %}
+{% assign prepend_url = include.prepend_url | default: "" %}
+{% assign class = include.class | default: "" %}
+{% assign badge_limit = include.limit | default: 0 %}
+
+{% for item in list %}
+{% assign item_page = item | slugify | append: ".html" %}
+<a href='{{ item_page | prepend: prepend_url | relative_url }}'
+    class='{{ class | append: " tag"}}'>
+    {{ item | escape }}
+</a>
+{% if badge_limit > 0 and forloop.index > badge_limit %}
+    {% break %}
+{% endif %}
+{% endfor %}
