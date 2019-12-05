@@ -61,18 +61,45 @@ Additionally, this theme supports several components for organizing posts
 ### Desktop
 
 ![A Post Page](docs/post-desktop-sm.png?raw=true "Post Desktop")
+
+---
+
 ![All Posts Page](docs/all-posts-desktop-sm.png?raw=true "All Posts Desktop")
+
+---
+
 ![A Static Page](docs/page-desktop-sm.png?raw=true "Page Desktop")
+
+---
+
 ![A Post Group Page](docs/group-desktop-sm.png?raw=true "Post Group Desktop")
+
+---
+
 ![A Post in a Series](docs/series-desktop-sm.png?raw=true "Series Desktop")
 
 ### Mobile
 
 ![The Front Page](docs/front-mobile-sm.png?raw=true "Front Page Mobile")
+
+---
+
 ![A Post Page](docs/post-mobile-sm.png?raw=true "Post Mobile")
+
+---
+
 ![All Posts Page](docs/all-posts-mobile-sm.png?raw=true "All Posts Mobile")
+
+---
+
 ![A Static Page](docs/page-mobile-sm.png?raw=true "Page Mobile")
+
+---
+
 ![A Post Group Page](docs/group-mobile-sm.png?raw=true "Post Group Mobile")
+
+---
+
 ![A Post in a Series](docs/series-mobile-sm.png?raw=true "Series Mobile")
 
 ## Contributing
