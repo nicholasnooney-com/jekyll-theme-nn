@@ -4,7 +4,8 @@
 
 This repository contains a Jekyll Theme setup as a Gem. This theme
 is used for my own personal site. You are welcome to use it as
-well, if you'd like.
+well, if you'd like. A live site using this theme can be found here:
+<https://blog.nicholasnooney.com>
 
 ![The Front Page](docs/front-desktop-sm.png?raw=true "Front Page Desktop")
 
